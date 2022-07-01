@@ -3,7 +3,7 @@
 
 int SecondNum(int num)
 {
-    return (num/10)%10;
+    return (num / 10) % 10;
 }
 
 int num = int.Parse(Console.ReadLine());
