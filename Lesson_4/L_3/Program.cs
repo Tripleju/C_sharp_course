@@ -20,6 +20,10 @@ void SelectionSort(int[] array)
     {
         int MinPosition=i;
 
+        for (int j = i+1; j < array.Length; j++)
+        {
+            if(array[j]<array[MinPosition]) MinPosition=j;
+        }
 
 
         int temporary=array[i];
@@ -31,6 +35,7 @@ void SelectionSort(int[] array)
 
     }
 }
-
+PrintArray(arr);
+SelectionSort(arr);
 
 PrintArray(arr);
