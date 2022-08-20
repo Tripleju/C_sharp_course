@@ -24,13 +24,13 @@ int[] MassNum(int size)
     }
     return arr;
 }
-
+// мой вариант
 void SummOddPositionNum(int[] arr)
 {
     int sum = 0;
     for (int i = 0; i < arr.Length; i++)
     {
-        if (i % 2 == 0 )
+        if (i % 2 == 0)
         {
             sum += arr[i];
         }
@@ -38,6 +38,21 @@ void SummOddPositionNum(int[] arr)
     }
     Console.WriteLine($"Sum Odd Position Number={sum}");
 }
+
+// вариант преподавателя c int
+void SummOddPositionNum_check(int[] arr)
+{
+    int sum = 0;
+    for (int i = 0; i < arr.Length; i += 2)
+    {
+        sum += arr[i];
+    }
+    Console.WriteLine($"Sum Odd Position Number 2={sum}");
+}
+
 int[] arr_1 = MassNum(5);
 Print(arr_1);
 SummOddPositionNum(arr_1);
+SummOddPositionNum_check(arr_1);
+
+

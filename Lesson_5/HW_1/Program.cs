@@ -13,13 +13,13 @@ Console.Write($"{arr[i]} ");
 Console.WriteLine();
 }
 
-int[] MassNum(int size)
+int[] MassNum(int size, int from, int to)
 {
 int[] arr = new int[size];
 
 for (int i = 0; i < size; i++)
 {
-arr[i] = new Random().Next(100, 1000);
+arr[i] = new Random().Next(from, to);
 }
 return arr;
 }
@@ -38,6 +38,6 @@ void CountEvenNum(int[] arr)
     }
      Console.WriteLine($"Count Even={count}");
 }
-int[] arr_1 =MassNum(12);
+int[] arr_1 =MassNum(12,100,1000);
 Print(arr_1);
 CountEvenNum(arr_1);
