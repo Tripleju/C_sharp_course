@@ -24,12 +24,12 @@ int[] MassNum(int size, int from, int to)
     return arr;
 }
 
-int CopyMass(int arr1)
+int CopyMass(int size)
 {
-    Array[] arr2=Array.Empty;
-    for (int i = 0; i < arr1.Length; i++)
+    int[] arr2 = new int[size];
+    for (int i = 0; i < arr.Length; i++)
     {
-        arr2[i]=arr1[i];
+        arr2[i]=arr[i];
     }
     return arr2;
 }
@@ -37,3 +37,4 @@ int arr_1=MassNum(5,1,30);
 Print(arr_1);
 int arr_2=CopyMass(arr_1);
 Print(arr_2);
+
