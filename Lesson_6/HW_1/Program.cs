@@ -9,7 +9,6 @@ void CountPositiveNum(int size)
 {
 int[] arr = new int[size];
 int count=0;
-// Console.WriteLine("Введите число");
     for (int i = 0; i < size; i++)
     {
         Console.WriteLine("Введите следующее число");
@@ -18,5 +17,5 @@ int count=0;
     }
 Console.WriteLine($"Количество положительных чисел={count}");
 }
-
+Console.WriteLine("Введите число");
 CountPositiveNum(6);

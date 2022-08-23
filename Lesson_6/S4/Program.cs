@@ -2,39 +2,56 @@
 // копию заданного массива с помощью поэлементного
 // копирования. (двумерный массив взять)
 
-void Print(int[] arr)
+void Print(int[,] arr)
 {
-    int size = arr.Length;
+    int row_size = arr.GetLength(0);
+    int column_size = arr.GetLength(1);
 
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < row_size; i++)
     {
-        Console.Write($"{arr[i]} ");
+        for (int j = 0; j < column_size; j++)
+        {
+            Console.Write($"{arr[i,j]} ");
+        }
+      Console.WriteLine();
     }
     Console.WriteLine();
 }
 
-int[] MassNum(int size, int from, int to)
+int[,] MassNum(int row, int column, int from, int to)
 {
-    int[] arr = new int[size];
+    int[,] arr = new int[row, column];
 
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < row; i++)
     {
-        arr[i] = new Random().Next(from, to);
+        for (int j = 0; j < column; j++)
+        {
+            arr[i,j] = new Random().Next(from, to);
+        }
+    
     }
     return arr;
 }
 
-int CopyMass(int size)
+int[,] CopyMass(int[,] arr)
 {
-    int[] arr2 = new int[size];
-    for (int i = 0; i < arr.Length; i++)
+    int row_size = arr.GetLength(0);
+    int column_size = arr.GetLength(1);
+
+    int[,] new_arr = new int[row_size,column_size];
+
+    for (int i = 0; i < row_size; i++)
     {
-        arr2[i]=arr[i];
+        for (int j = 0; j < column_size; j++)
+        {
+             new_arr[i,j]=arr[i,j];
+        }
+       
     }
-    return arr2;
+    return new_arr;
 }
-int arr_1=MassNum(5,1,30);
+int[,] arr_1=MassNum(2,5,1,30);
 Print(arr_1);
-int arr_2=CopyMass(arr_1);
+int[,] arr_2=CopyMass(arr_1);
 Print(arr_2);
 
